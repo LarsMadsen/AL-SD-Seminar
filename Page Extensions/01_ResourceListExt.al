@@ -1,5 +1,12 @@
-pageextension 123456701 ResourceListExt extends "Resource List"
-//CSD1.00 - 2018 - 01-01 - D. E. Veloper
+pageextension 123456701 CSD_ResourceListExt extends "Resource List"
+// CSD1.00 - 2018-01-01 - D. E. Veloper
+// Chapter 5 - Lab 1-3
+// Changed property on the Type field
+// Added new fields:
+// - Internal/External
+// - Maximum Participants
+// Added code to OnOpenPage trigger
+
 {
     layout
     {
@@ -9,33 +16,27 @@ pageextension 123456701 ResourceListExt extends "Resource List"
         }
         addafter(Type)
         {
-            field("CSD Resource Type";"CSD Resource Type")
+            field("Resource Type"; "CSD_Resource Type")
             {
-
             }
-            field("CSD_Maximum Participants";"CSD_Maximum Participants")
+            field("Maximum Participants"; "CSD_Maximum Participants")
             {
                 Visible = ShowMaxField;
             }
         }
     }
-
-    actions
-    {
-        // Add changes to page actions here
-    }
+    
     trigger OnOpenPage();
     begin
-        FilterGroup(3);
-        ShowType := (getfilter(Type)='');
-        showMaxField := (GetFilter(Type))=format(Type::Machine);
-        FilterGroup(0);
+        rec.FilterGroup(3);
+        ShowType := (GetFilter(Type)='');
+        ShowMaxField := (GetFilter(Type)=format(Type::machine));
+        rec.FilterGroup(0);
     end;
+
     var
         [InDataSet]
-        ShowMaxField: Boolean;
+        ShowType : Boolean;
         [InDataSet]
-        ShowType: boolean;
-        
-
+        ShowMaxField : Boolean; 
 }

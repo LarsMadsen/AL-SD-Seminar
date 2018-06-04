@@ -1,32 +1,35 @@
 tableextension 123456700 CSD_ResourceExt extends Resource
-//CSD1.00 - 2018-01-01 - D. E. Veloper
+// CSD1.00 - 2012-06-15 - D. E. Veloper
+// Chapter 5 - Lab 1-1
+// -	Added new fields:
+// -	Internal/External
+// -	Maximum Participants
 {
     fields
     {
         modify("Profit %")
         {
-            trigger OnAfterValidate();
+        
+            trigger OnAfterValidate()
             begin
-              rec.TestField("Unit Cost");  
+                Rec.TestField("Unit Cost");
             end;
         }
-        field(123456701; "CSD Resource Type"; Option)
+        field(123456701;"CSD_Resource Type";Option)
         {
             Caption = 'Resource Type';
-            OptionMembers ="Internal","External" ;
-            optionCaption ='Internal,External'
+            OptionMembers = "Internal","External";
+            OptionCaption = 'Internal,External';
         }
         field(123456702;"CSD_Maximum Participants";Integer)
         {
-            caption = 'Maximum Participants'
+            Caption = 'Maximum Participants';
         }
         field(123456703;"CSD_Quantity Per Day";Integer)
         {
-            caption = 'Quantity Per Day';
-        }
-        // Add changes to table fields here
+            Caption = 'Quantity Per Day';
+        }        
     }
-    
-    var
-        myInt : Integer;
 }
+
+
