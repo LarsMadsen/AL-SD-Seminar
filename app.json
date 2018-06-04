@@ -1,0 +1,23 @@
+{
+  "id": "b2441b1d-d3f9-46ff-a102-c4cb458d527c",
+  "name": "AL SD Seminar",
+  "publisher": "Default publisher",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "compatibilityId": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 50100,
+    "to": 50149
+  }
+}
